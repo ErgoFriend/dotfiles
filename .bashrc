@@ -2,7 +2,19 @@ alias  y='yarn'
 alias yr='yarn run $1'
 alias ya='yarn add $1'
 alias yr='yarn remove $1'
+
 alias ..='cd ../'
+alias t='touch $1'
+
+# https://qiita.com/ktgw0316/items/23235dd2533f488be7dak
+gcc() { 
+    if [[ $1 == "-fopenmp" ]]; then
+        # echo gcc -Xpreprocessor -fopenmp -lomp "${@:2:($#-1)}"
+        command gcc -Xpreprocessor -fopenmp -lomp "${@:2:($#-1)}"
+    else
+        command gcc "$@"
+    fi
+}
 
 alias gc='git clone $1'
 alias nr='npm run $1'
