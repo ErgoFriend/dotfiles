@@ -30,13 +30,19 @@ eval "$(starship init zsh)"
 
 b () { bat $@ }
 
-y () { yarn $@ }
+y () { yarn $@ --ignore-engines}
+
+n () { npm $@ }
+nr () { npm run $@ }
 
 t () { touch $@ }
+mkd () { mkdir $@ }
 
 gc () { git clone $@ }
 
 gcc () { gcc-9 $@ }
+
+m () { mdcat $@ }
 
 # opam configuration
 test -r /Users/ergop/.opam/opam-init/init.sh && . /Users/ergop/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
@@ -67,3 +73,8 @@ alias ll='colorls --group-directories-first --almost-all --long' # detailed list
 # prompt spaceship
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zshの補完で大文字を区別しない方法
+# https://qiita.com/sims0728/items/0edd99a3c7d7247719cc
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+eval $(thefuck --alias)
