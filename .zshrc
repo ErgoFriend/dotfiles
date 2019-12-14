@@ -30,7 +30,7 @@ eval "$(starship init zsh)"
 
 b () { bat $@ }
 
-y () { yarn $@ --ignore-engines}
+y () { yarn --ignore-engines $@}
 
 n () { npm $@ }
 nr () { npm run $@ }
@@ -78,3 +78,12 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # https://qiita.com/sims0728/items/0edd99a3c7d7247719cc
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 eval $(thefuck --alias)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# fuckを使うため
+DISABLE_CORRECTION="true"
+
+alias f='fuck'
