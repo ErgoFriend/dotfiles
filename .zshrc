@@ -87,3 +87,15 @@ export NVM_DIR="$HOME/.nvm"
 DISABLE_CORRECTION="true"
 
 alias f='fuck'
+
+# MongoDB
+alias mongod='mongod --config /usr/local/etc/mongod.conf'
+
+# Flutter
+export PATH="$PATH:/Users/ergop/flutter/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# https://qiita.com/kompiro/items/5fc46089247a56243a62
+# https://github.com/direnv/direnv
+export EDITOR="/usr/bin/vim"
+eval "$(direnv hook zsh)"
